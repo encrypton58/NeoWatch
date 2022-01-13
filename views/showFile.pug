@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/showFile.css")
+        title
+    body 
+        .music
+            video(src=`/Files/Start-Up/${file}`)
+            h2.title 
+            .player
+                .btns
+                    a(href="/see?dir=Start-Up")
+                        span
+                            ion-icon(name="return-down-back-outline")
+                    span.mute
+                        ion-icon(name="volume-mute-outline")
+                    span.playPause
+                        ion-icon(name="play-outline")
+                    span.full
+                        ion-icon(name="expand-outline")
+                    a(href="/see?dir=Start-Up")
+                        span
+                            ion-icon(name="play-skip-forward-outline")
+
+        script(type="module", src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+        script(nomodule, src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js")
+        script(src='/js/showFile.js')

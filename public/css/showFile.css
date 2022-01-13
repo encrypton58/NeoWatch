@@ -1,0 +1,118 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f9f9f9;
+        overflow: hidden;
+    }
+    
+    video {
+        display: flex;
+        width: 70%;
+        flex-direction: row;
+        height: 70%;
+    }
+    
+    .music {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .title {
+        font-weight: 400;
+        font-size: 2em;
+        color: #38a7ff;
+        display: inline-flex;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .player {
+        position: relative;
+        width: 600px;
+        min-height: 100px;
+        background-color: #fbfbfb;
+        border: 2px solid #fff;
+        border-radius: 80px;
+        box-shadow: -10px -10px 15px #fff, 10px 10px 15px rgba(0, 0, 0, 0.1), inset -5px -5px 15px #fff, inset 5px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btns {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .btns span {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #777;
+        margin: 20px;
+        cursor: pointer;
+        box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btns span:active,
+    .btns span.active {
+        color: #ff669a;
+        box-shadow: inset 0 -7px 5px rgba(0, 0, 0, 0.25);
+    }
+    
+    .btns span.playPause {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .btns span ion-icon {
+        font-size: 2em;
+    }
+    
+    .btns span.playPause ion-icon {
+        font-size: 3em;
+    }
+    
+    @media (max-width: 600px) {
+        .player {
+            width: 80%;
+            height: 40%;
+            margin-left: 5%;
+        }
+        .btns span {
+            width: 60px;
+            height: 30px;
+        }
+        .btns span.playPause {
+            width: 80px;
+            height: 40px;
+        }
+        .btns span ion-icon {
+            font-size: 1em;
+        }
+        .btns span.playPause ion-icon {
+            font-size: 2em;
+        }
+        video {
+            width: 80%;
+            height: 70%;
+            margin-left: 6%;
+        }
+    }

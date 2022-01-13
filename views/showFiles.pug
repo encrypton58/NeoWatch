@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title AnthoDrive
+        link(rel="stylesheet" type="text/css" href="/css/index.css")
+
+    body
+        .container 
+            input(type="hidden" id="size" value=files.length)
+            each file, i in files
+                .card
+                    .imgBx
+                        img(id=`imgFile${i}`, src="", alt="Image set of files")
+                    .contentBx
+                        h2=file.split('.')[0]
+                        p Created at #{info[i]}
+                        a(href=`/watch?dir=${dir}&name=${file}`)
+                            span=file.split('.')[0]
+
+        //- h1 Selecciona un archivo para verlo
+        //- br
+        //- div(id="backDiv")
+        //-     a(id="back", href="/") Regresar
+
+        script.
+            let url = new URLSearchParams(window.location.search)
+            const name = url.get('dir')
+            const size = parseInt(document.getElementById('size').value)
+            let isDifferent = false
+            if(name == "Archivos"){
+                isDifferent = true
+            }
+            for(let i = 0; i <= size-1; i++) {
+                if(isDifferent){
+                    document.getElementById("imgFile"+ i).src = `/img/${name}.svg`
+                }else{
+                    document.getElementById("imgFile"+ i).src = `/img/${name}.jpeg`
+                }
+            }
